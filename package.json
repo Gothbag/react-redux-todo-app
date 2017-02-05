@@ -1,0 +1,49 @@
+{
+  "name": "react-redux-todo-app",
+  "version": "1.0.0",
+  "description": "A simple application to manage a todo list using React, Redux and JSON Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base dist --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gothbag/react-redux-todo-app.git"
+  },
+  "keywords": [
+    "todo",
+    "react",
+    "redux",
+    "json-server"
+  ],
+  "author": "Gothbag",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gothbag/react-redux-todo-app/issues"
+  },
+  "homepage": "https://github.com/Gothbag/react-redux-todo-app#readme",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2",
+    "react-fontawesome": "^1.5.0",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.1",
+    "reselect": "^2.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
+  }
+}
