@@ -1,6 +1,7 @@
 var path = require("path");
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 	context: path.join(__dirname, "app"),
@@ -29,6 +30,9 @@ module.exports = {
 	plugins: [
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
+		new CopyWebpackPlugin([
+            { from: "../assets/css/styles.css", to: "../dist/css" }
+		]),
 		new HtmlWebpackPlugin({
             title: "Todos",
             filename: "index.html",

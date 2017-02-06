@@ -6,7 +6,7 @@ const LinkButton = ({ active, children, onClick }) => {
     }
 
     return (
-        <a href="#"
+        <a href="#" className="filter"
         onClick={e => {
         e.preventDefault()
         onClick()

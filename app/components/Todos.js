@@ -1,9 +1,8 @@
 import React, { PropTypes } from "react";
 import Todo from "./Todo";
-import { ListGroup } from "react-bootstrap";
 
 const Todos = ({ todos, onTodoClick }) => (
-    <ListGroup>
+    <div>
         {todos.map(todo =>
             <Todo
             key={todo.id}
@@ -11,7 +10,7 @@ const Todos = ({ todos, onTodoClick }) => (
             onClick={() => onTodoClick(todo.id)}
             />
         )}
-    </ListGroup>
+    </div>
 );
 
 Todos.propTypes = {

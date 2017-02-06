@@ -1,26 +1,37 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { todoAdd } from "../actions/todos";
+import { FormControl, FormGroup, InputGroup, ListGroupItem } from "react-bootstrap";
 
-var AddTodo = ({ dispatch }) => {
-    var input
+class AddTodo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ""
+        }
+        this.handleChange = this.handleChange.bind(this);
+    }
 
-    return (
-        <div>
-            <form onSubmit={e => {
-                e.preventDefault()
-                if (!input.value.trim()) {
-                    return;
-                }
-                dispatch(todoAdd(input.value));
-                input.value = '';
-            }}>
-                <input ref={node => {input = node}} />
-                <button type="submit">
-                    Add Todo
-                </button>
-            </form>
-        </div>
-    )
+    handleChange(e) {
+        this.setState({ value: e.target.value });
+    }
+
+    render() {
+        const { dispatch } = this.props;
+        return (
+            <ListGroupItem>
+                <InputGroup>
+                    <FormControl className="new-todo" placeholder="Type a new task and press [ENTER]" componentClass="input" value={this.state.value}
+                    onChange={this.handleChange} onKeyPress={ev => {
+                        if(ev.key == "Enter") { 
+                            dispatch(todoAdd(this.state.value));
+                            this.setState({ value : "" });
+                        } 
+                    }} />
+                </InputGroup>
+            </ListGroupItem>
+        );
+    }
+    
 }
 export default connect()(AddTodo)
