@@ -1,7 +1,7 @@
 # react-redux-todo-app
 A simple application to manage a todo list using React, Redux and JSON Server
 
-It is required to install webpack as a global package:
+It is required to install webpack as a global package (as well as Node and npm):
 
 1. npm install webpack -g
 
