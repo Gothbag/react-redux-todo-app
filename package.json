@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "jsonServer": "./node_modules/.bin/json-server --watch ./db/db.json --port 3030",
     "start": "./node_modules/.bin/webpack-dev-server --content-base dist --inline"
   },
   "repository": {
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/Gothbag/react-redux-todo-app#readme",
   "dependencies": {
     "axios": "^0.15.3",
+    "json-server": "^0.9.4",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
@@ -32,6 +34,7 @@
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-logger": "^2.8.1",
+    "redux-thunk": "^1.0.3",
     "reselect": "^2.5.4"
   },
   "devDependencies": {

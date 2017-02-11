@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { keywordSet } from "../actions/keyword";
 import FontAwesome from "react-fontawesome";
+import { FormControl, FormGroup, InputGroup } from "react-bootstrap";
 
 class Search extends React.Component {
     constructor(props) {
@@ -15,17 +16,9 @@ class Search extends React.Component {
         const { dispatch, keyword } = this.props;
         const searchActive = keyword + "".trim() !== "";
         return (
-            <div>
-                <form onSubmit={e => {
-                    e.preventDefault();
-                    if (searchActive) {
-                        dispatch(keywordSet(""));
-                        this.setState({ input : ""});
-                    } else {
-                        dispatch(keywordSet(this.state.input));
-                    }
-                }}>
-                    <input value={this.state.input} onChange={e => {
+            <FormGroup>
+                <InputGroup>
+                    <FormControl type="text" value={this.state.input} onChange={e => {
                         this.setState({ input : e.target.value});
                     }} onKeyPress={ev => {
                         if(ev.key == "Enter") { 
@@ -33,11 +26,18 @@ class Search extends React.Component {
                             dispatch(keywordSet(this.state.input));
                         } 
                     }}/>
-                    <button type="submit">
+                    <InputGroup.Addon className="search-button" onClick={e => {
+                        if (searchActive) {
+                            dispatch(keywordSet(""));
+                            this.setState({ input : ""});
+                        } else {
+                            dispatch(keywordSet(this.state.input));
+                        }
+                    }}>
                         <FontAwesome name={searchActive ? "close" : "search"}/>
-                    </button>
-                </form>
-            </div>
+                    </InputGroup.Addon>
+                </InputGroup>
+            </FormGroup>
         );
     }
     

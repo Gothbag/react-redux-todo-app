@@ -1,15 +1,8 @@
 import { TODO_ADD, TODO_TOGGLE } from "../actions/todos";
 
 let id = 1;
-const todo = (state = [], action) => {
+const todo = (state = {}, action) => {
 	switch (action.type) {
-		case TODO_ADD:
-			return {
-				id: id++,
-			    text: action.text,
-			    completed: false
-		    };
-		    break;
 		case TODO_TOGGLE:
 		    if (state.id !== action.id) {
 			    return state;
@@ -22,9 +15,15 @@ const todo = (state = [], action) => {
 const todos = (state = [], action) => {
 	switch (action.type) {
 		case TODO_ADD:
+		    if (Array.isArray(action.payload)) {
+		        return [...state, ...action.payload]
+		    }
+		    if (!action.payload.id) { 
+		        action.payload.id = new Date().getTime(); 
+		    }
 			return [ //we're simply concatenating the state array and the new todo
 				...state,
-				todo(undefined, action)
+				action.payload
 			]
 			break;
 		case TODO_TOGGLE:

@@ -19,3 +19,7 @@
 	-moz-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
+
+.search-button {
+	cursor: pointer;
+}

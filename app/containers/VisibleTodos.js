@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { todoToggle } from "../actions/todos";
+import { loadTodos, todoToggle } from "../actions/todos";
 import Todos from "../components/Todos";
 import { getVisibleTodos } from "../selectors";
 
@@ -8,8 +8,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onTodoClick: (id) => {
-        dispatch(todoToggle(id));
+    onTodoClick: (todo) => {
+        dispatch(todoToggle(todo));
+    },
+    loadTodos: () => {
+        dispatch(loadTodos());
     }
 });
 

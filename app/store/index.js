@@ -3,10 +3,11 @@ import todos from "../reducers/todos";
 import keyword from "../reducers/keyword";
 import visibilityFilter from "../reducers/visibilityFilter";
 import createLogger from "redux-logger";
+import thunk from "redux-thunk";
 
 const logger = createLogger();
 
-const middleware = [logger];
+const middleware = [thunk, logger];
 
 const store = createStore(combineReducers({
     todos,

@@ -31,7 +31,7 @@ module.exports = {
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new CopyWebpackPlugin([
-            { from: "../assets/css/styles.css", to: "../dist/css" }
+            { from: "assets/css/styles.css", to: "../dist/css" }
 		]),
 		new HtmlWebpackPlugin({
             title: "Todos",
