@@ -18,7 +18,7 @@ class Search extends React.Component {
         return (
             <FormGroup>
                 <InputGroup>
-                    <FormControl type="text" value={this.state.input} onChange={e => {
+                    <FormControl type="text" className="search-text" value={this.state.input} onChange={e => {
                         this.setState({ input : e.target.value});
                     }} onKeyPress={ev => {
                         if(ev.key == "Enter") { 

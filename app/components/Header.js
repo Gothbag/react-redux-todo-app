@@ -3,7 +3,7 @@ import Search from "../containers/Search";
 import { ListGroupItem, Row, Col } from "react-bootstrap";
 
 const Header = () => (
-    <ListGroupItem>
+    <ListGroupItem className="header">
         <Row>
             <Col xs={8} md={8}>
                The to-do list exercise
